@@ -1,0 +1,36 @@
+extends ../../layout/authen.pug
+
+block main 
+    div(class="login")
+        form(
+            action=`${prefixAdmin}/authen/login`
+            method="POST"
+            class="form-login"
+        ) 
+            h1(class="form-welcome") Đăng nhập
+
+            div(class="form-group")
+                input(
+                    type="text"
+                    id="email"
+                    name="email"
+                )
+                label(for="email") Email
+                <i class="fa-solid fa-user icon"></i>
+
+            div(class="form-group")
+                input(
+                    type="text"
+                    id="password"
+                    name="password"
+                )
+                label(for="password") Password
+                <i class="fa-solid fa-eye d-none icon"></i>
+                <i class="fa-solid fa-eye-slash icon"></i>
+
+            div(class="form-group")
+                button(
+                    type="submit"
+                    class="btn btn-login form-control"
+                )   Đăng nhập
+            

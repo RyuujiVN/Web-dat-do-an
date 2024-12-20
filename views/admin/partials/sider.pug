@@ -1,0 +1,18 @@
+aside(class="sider")
+    div(class="sider-menu")
+        div(class="sider-logo")
+            img(src="/admin/images/logo.png", alt="Logo")
+        div(class="logo-title")
+            img(src="/admin/images/vy-food-title.png")
+        ul(class="sider-list") 
+            li(class="sider-item active")
+                <i class="fa-solid fa-house icon"></i>
+                a(href=`${prefixAdmin}/dashboard`) Trang tổng quan
+
+            li(class="sider-item")
+                <i class="fa-solid fa-bowl-food icon"></i>
+                a(href=`${prefixAdmin}/food`) Sản phẩm
+
+            li(class="sider-item")
+                <i class="fa-solid fa-users icon"></i>
+                a(href=`${prefixAdmin}/guest`) Khách hàng

@@ -1,0 +1,375 @@
+/* Header */
+.header {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    grid-area: header;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-admin {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.header-account .account-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
+
+.header-account .account-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-account .account-descr {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-account .account-descr .account-name {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.header-account .account-descr .account-role {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* End Header */
+
+/* Button */
+.btn {
+    border-radius: 25px;
+    font-size: 1.4rem;
+    padding: 10px 15px;
+}
+
+.btn.btn-logout {
+    background: transparent;
+    border: 2px solid #ff4b2b;
+    color: #ff416c;
+    transition: all 0.2 ease;
+}
+
+.btn.btn-logout:hover {
+    background: var(--bg-gradient);
+    border: 2px solid #ff4b2b;
+    color: #fff;
+    border: 2px solid transparent;
+}
+
+/* End Button */
+
+/* Body */
+.body {
+    position: relative;
+}
+
+.body .content {
+    position: relative;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.body .sider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    height: 100vh;
+    background: #fff;
+    padding-top: 100px;
+}
+
+/* End Body */
+
+/* Sider */
+.sider-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sider-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.sider-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-title {
+    width: 100px;
+}
+
+.logo-title img {
+    width: 100%;
+}
+
+.sider-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 15px;
+    gap: 10px;
+}
+
+.sider-list .sider-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.sider-list .sider-item::before {
+    content: "";
+    background: var(--bg-gradient);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    z-index: -1;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+}
+
+.sider-list .sider-item:hover::before {
+    transform: scaleX(1);
+}
+
+.sider-list .sider-item.active {
+    background: var(--bg-gradient);
+}
+
+.sider-list .sider-item .icon {
+    color: var(--text-grey);
+    font-size: 2.2rem;
+}
+
+.sider-list .sider-item a {
+    color: var(--bg-gradient);
+    font-size: 1.8rem;
+    transition: all .3s;
+}
+
+
+.sider-list .sider-item.active .icon,
+.sider-list .sider-item:hover .icon {
+    color: #fff;
+}
+
+.sider-list .sider-item.active a,
+.sider-list .sider-item:hover a {
+    color: #fff;
+}
+
+/* End Sider */
+
+/* Dashboard */
+.dashboard .dashboard-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dashboard .dashboard-content {
+    margin-top: 40px;
+}
+
+.dashboard .dashboard-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dashboard .dashboard-item {
+    height: 500px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset -5px -5px 5px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.dashboard .card {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.dashboard .dashboard-item:hover .card {
+    transform: translateY(-10px);
+}
+
+.dashboard .card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background: var(--bg-gradient);
+    transition: all 0.3s linear;
+    bottom: 0;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.dashboard .dashboard-item:hover .card::before {
+    height: 100%;
+    top: 0;
+}
+
+.dashboard .card .card-amount {
+    font-weight: 700;
+    font-size: 3rem;
+    position: absolute;
+    right: 20px;
+}
+
+.dashboard .dashboard-item:hover .card .card-amount {
+    color: #fff;
+    transition: all 0.3s linear;
+}
+
+.dashboard .card .card-image {
+    width: 200px;
+    height: auto;
+    margin-top: 50px;
+}
+
+.dashboard .card .card-image img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dashboard .card .card-content {
+    text-align: center;
+    transition: all 0.3s linear;
+}
+
+.dashboard .dashboard-item:hover .card .card-content {
+    color: #fff;
+}
+
+
+.dashboard .card .card-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dashboard .card .card-descr {
+    font-size: 1.4rem;
+    line-height: 140%;
+}
+
+/* End Dashboard */
+
+/* Form Login */
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/Background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-login {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+    width: 450px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.form-login .form-welcome {
+    font-size: 5rem;
+    font-family: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-login .form-group {
+    position: relative;
+}
+
+.form-login .form-group input {
+    padding: 10px;
+    border-radius: 45px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+}
+
+.form-login .form-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #fff;
+    transform: translateY(-50%);
+    user-select: none;
+}
+
+.form-login .form-group input:focus+label {
+    top: 0;
+}
+
+.form-login .form-group .icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: #fff;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    background: transparent;
+}
+
+/* End Form Login */
