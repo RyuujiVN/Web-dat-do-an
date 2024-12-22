@@ -1,0 +1,49 @@
+extends ../../layout/default.pug
+include ../../mixins/box-head.pug
+include ../../mixins/modal.pug
+
+block main 
+    div(class="role")
+        div(class="container")
+            div(class="role-title")
+                +box-head("Thêm mới nhóm quyền")
+
+            div(class="row")
+                div(class="col-xl-8 col-lg-8 col-12")
+                    div(class="role-form")
+                        form(
+                            action=`${prefixAdmin}/role/add`
+                            method="POST" 
+                        ) 
+                            div(class="form-group")
+                                label(for="title") Tiêu đề:
+                                input(
+                                    type="text"
+                                    id="title"
+                                    name="title"
+                                    placeholder="Nhập tiêu đề..."
+                                )
+
+                            div(class="form-group")
+                                label(for="description") Mô tả:
+                                textarea(
+                                    type="text"
+                                    id="description"
+                                    name="description"
+                                    placeholder="Nhập mô tả..."
+                                    class="textarea-mce"
+                                )
+
+                            div(class="form-group form-btn") 
+                                button(
+                                type="submit"
+                                class="btn btn-danger my-4"
+                                ) Tạo mới
+
+                                a(
+                                href=`${prefixAdmin}/role`
+                                class="btn btn-primary"
+                                ) Quay lại
+                                
+
+    

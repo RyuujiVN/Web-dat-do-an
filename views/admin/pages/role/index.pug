@@ -1,0 +1,37 @@
+extends ../../layout/default.pug
+include ../../mixins/box-head.pug
+
+block main 
+    div(class="role")
+        div(class="role-title")
+            +box-head("Trang nhóm quyền")
+
+    div(class="role-table")
+        div(class="container")
+            div(class="row")
+                div(class="col-12")
+                    div(class="role-add text-end")
+                        a(
+                            href=`${prefixAdmin}/role/add`
+                            class="btn btn-outline-danger"
+                        ) + Thêm mới
+                    table(class="table table-hover")
+                        thead(class="table-light")
+                            tr 
+                                th STT
+                                th Nhóm quyền
+                                th Mô tả ngắn
+                                th Hành động
+
+                        tbody 
+                            each role, index in roles
+                                tr 
+                                    td #{index + 1}
+                                    td #{role.title}
+                                    td !{role.description}
+                                    td 
+                                        a(href=`${prefixAdmin}/role/edit` class="btn btn-edit")
+                                            <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+                                        a(href=`${prefixAdmin}/role/delete` class="btn btn-delete")
+                                            <i class="fa-solid fa-trash icon icon-delete"></i>
+    

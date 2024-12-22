@@ -1,0 +1,88 @@
+extends ../../layout/default.pug
+include ../../mixins/box-head.pug
+
+block main 
+    div(class="account")
+        div(class="container")
+            div(class="account-title")
+                +box-head("Thêm mới tài khoản")
+
+            div(class="row")
+                div(class="col-xl-8 col-lg-8 col-12")
+                    div(class="account-form")
+                        form(
+                            action=`${prefixAdmin}/account/add`
+                            method="POST" 
+                            enctype="multipart/form-data"
+                        ) 
+                            div(class="form-group")
+                                label(for="fullName") Họ tên*
+                                input(
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Nhập họ tên..."
+                                )
+
+                            div(class="form-group")
+                                label(for="email") Email *
+                                input(
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Nhập email..."
+                                )
+
+                            div(class="form-group")
+                                label(for="password") Mật khẩu *
+                                input(
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Nhập mật khẩu..."
+                                )
+
+                            div(class="form-group")
+                                label(for="phone") Số điện thoại:
+                                input(
+                                    type="text"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Nhập số điện thoại..."
+                                )
+
+                            div(class="form-group" upload-image)
+                                label(for="avatar") Avatar:
+                                input(
+                                    type="file"
+                                    accept="image/*"
+                                    name="avatar"
+                                    upload
+                                )
+                                img(
+                                    src=""
+                                    alt="" 
+                                    upload-image-preview 
+                                    class="image-preview"
+                                )
+                            
+                            div(class="form-group")
+                                label(class="role_id") Phân quyền:
+                                div(class="custom-select")
+                                    select(name="role_id" class="select-box")
+                                        each role in roles 
+                                            option(value=role.id class="select-item") #{role.title}  
+
+                            div(class="form-group form-btn") 
+                                button(
+                                type="submit"
+                                class="btn btn-danger my-4"
+                                ) Tạo mới
+
+                                a(
+                                href=`${prefixAdmin}/account`
+                                class="btn btn-primary"
+                                ) Quay lại
+                                
+
+    

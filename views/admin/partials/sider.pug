@@ -5,14 +5,26 @@ aside(class="sider")
         div(class="logo-title")
             img(src="/admin/images/vy-food-title.png")
         ul(class="sider-list") 
-            li(class="sider-item active")
+            li(class="sider-item")
                 <i class="fa-solid fa-house icon"></i>
                 a(href=`${prefixAdmin}/dashboard`) Trang tổng quan
 
             li(class="sider-item")
                 <i class="fa-solid fa-bowl-food icon"></i>
-                a(href=`${prefixAdmin}/food`) Sản phẩm
+                a(href=`${prefixAdmin}/food`) Món ăn
 
             li(class="sider-item")
                 <i class="fa-solid fa-users icon"></i>
                 a(href=`${prefixAdmin}/guest`) Khách hàng
+
+            li(class="sider-item")
+                <i class="fa-solid fa-list icon"></i>
+                a(href=`${prefixAdmin}/category`) Danh mục món ăn
+
+            li(class="sider-item")
+                <i class="fa-solid fa-people-group icon"></i>
+                a(href=`${prefixAdmin}/role`) Nhóm quyền
+
+            li(class="sider-item")
+                <i class="fa-solid fa-user-tie icon"></i>
+                a(href=`${prefixAdmin}/account`) Tài khoản quản trị
